@@ -1,0 +1,21 @@
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\BitTicket.exe.config
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\BitTicket.exe
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\BitTicket.pdb
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\Newtonsoft.Json.dll
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\Newtonsoft.Json.xml
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.Form1.resources
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitTicket.Properties.Resources.resources
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitTicket.csproj.GenerateResource.Cache
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitTicket.exe
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitTicket.pdb
+C:\projetos\BitTicket\src\BitTicket\BitTicket\bin\Debug\BitTicket.exe.config
+C:\projetos\BitTicket\src\BitTicket\BitTicket\bin\Debug\BitTicket.exe
+C:\projetos\BitTicket\src\BitTicket\BitTicket\bin\Debug\BitTicket.pdb
+C:\projetos\BitTicket\src\BitTicket\BitTicket\bin\Debug\Newtonsoft.Json.dll
+C:\projetos\BitTicket\src\BitTicket\BitTicket\bin\Debug\Newtonsoft.Json.xml
+C:\projetos\BitTicket\src\BitTicket\BitTicket\obj\Debug\BitTicket.csprojResolveAssemblyReference.cache
+C:\projetos\BitTicket\src\BitTicket\BitTicket\obj\Debug\BitMarquee.Form1.resources
+C:\projetos\BitTicket\src\BitTicket\BitTicket\obj\Debug\BitTicket.Properties.Resources.resources
+C:\projetos\BitTicket\src\BitTicket\BitTicket\obj\Debug\BitTicket.csproj.GenerateResource.Cache
+C:\projetos\BitTicket\src\BitTicket\BitTicket\obj\Debug\BitTicket.exe
+C:\projetos\BitTicket\src\BitTicket\BitTicket\obj\Debug\BitTicket.pdb

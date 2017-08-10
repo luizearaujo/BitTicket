@@ -1,0 +1,11 @@
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\BitMarquee.exe.config
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\BitMarquee.exe
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\BitMarquee.pdb
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.csprojResolveAssemblyReference.cache
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.Form1.resources
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.Properties.Resources.resources
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.csproj.GenerateResource.Cache
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.exe
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\obj\Debug\BitMarquee.pdb
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\Newtonsoft.Json.dll
+c:\users\luiz\documents\visual studio 2017\Projects\BitMarquee\bin\Debug\Newtonsoft.Json.xml
