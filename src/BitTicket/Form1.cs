@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using BitInformation;
+using Newtonsoft.Json;
 using System;
 using System.Configuration;
 using System.Drawing;
@@ -50,22 +51,10 @@ namespace BitTicket
 
         private void Get()
         {
-            try
-            {
-                using (var client = new HttpClient())
-                {
-                    var responseString = client.GetStringAsync("https://api.bitvalor.com/v1/ticker.json").Result;
-                    var root = JsonConvert.DeserializeObject<RootObject>(responseString);
+            var repo = new Repositorio();
+            var root = repo.Get();
 
-                    mensagem = $"ÚLTIMO: {root.ticker_1h.exchanges.FOX.last.ToString("N")} - MÍN: {root.ticker_1h.exchanges.FOX.low.ToString("N")} - MÁX: {root.ticker_1h.exchanges.FOX.high.ToString("N")} - USD COM: {root.rates.USDCBRL.ToString("N")} - USD TUR: {root.rates.USDTBRL.ToString("N")}";
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
+            mensagem = $"ÚLTIMO: {root.ticker_1h.exchanges.FOX.last.ToString("N")} - MÍN: {root.ticker_1h.exchanges.FOX.low.ToString("N")} - MÁX: {root.ticker_1h.exchanges.FOX.high.ToString("N")} - USD COM: {root.rates.USDCBRL.ToString("N")} - USD TUR: {root.rates.USDTBRL.ToString("N")}";
         }
     }
 }

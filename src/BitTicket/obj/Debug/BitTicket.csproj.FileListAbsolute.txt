@@ -30,3 +30,5 @@ C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\obj\Debug\BitTicket.Propertie
 C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\obj\Debug\BitTicket.csproj.GenerateResource.Cache
 C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\obj\Debug\BitTicket.exe
 C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\obj\Debug\BitTicket.pdb
+C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\bin\Debug\BitInformation.dll
+C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\bin\Debug\BitInformation.pdb
