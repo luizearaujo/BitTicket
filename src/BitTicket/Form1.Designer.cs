@@ -1,4 +1,4 @@
-﻿namespace BitMarquee
+﻿namespace BitTicket
 {
     partial class Form1
     {
