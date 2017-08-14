@@ -41,10 +41,6 @@ namespace BitNotify
             }
         }
 
-        private void mynotifyicon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            this.Show();
-        }
 
         private void Get()
         {
@@ -136,12 +132,12 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
             this.timer1_Tick(sender, e);
         }
 
-        private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.btSair_Click(sender, e);
         }
 
-        private void atualizarToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.timer1_Tick(sender, e);
         }
