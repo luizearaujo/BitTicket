@@ -45,6 +45,7 @@
             this.mynotifyicon.Icon = ((System.Drawing.Icon)(resources.GetObject("mynotifyicon.Icon")));
             this.mynotifyicon.Text = "notifyIcon1";
             this.mynotifyicon.Visible = true;
+            this.mynotifyicon.Click += new System.EventHandler(this.mynotifyicon_Click);
             this.mynotifyicon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mynotifyicon_MouseDoubleClick);
             // 
             // timer1
@@ -55,7 +56,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 17);
+            this.label1.Location = new System.Drawing.Point(13, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 0;
@@ -63,7 +64,7 @@
             // 
             // txTempo
             // 
-            this.txTempo.Location = new System.Drawing.Point(95, 13);
+            this.txTempo.Location = new System.Drawing.Point(95, 35);
             this.txTempo.Name = "txTempo";
             this.txTempo.Size = new System.Drawing.Size(100, 20);
             this.txTempo.TabIndex = 1;
@@ -72,7 +73,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 50);
+            this.label2.Location = new System.Drawing.Point(16, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
@@ -81,11 +82,15 @@
             // cbExchange
             // 
             this.cbExchange.FormattingEnabled = true;
-            this.cbExchange.Location = new System.Drawing.Point(95, 46);
+            this.cbExchange.Items.AddRange(new object[] {
+            "BitValor",
+            "FoxBit",
+            "MercadoBitcoin",
+            "BitcoinToYou"});
+            this.cbExchange.Location = new System.Drawing.Point(95, 68);
             this.cbExchange.Name = "cbExchange";
             this.cbExchange.Size = new System.Drawing.Size(100, 21);
             this.cbExchange.TabIndex = 3;
-            this.cbExchange.Text = "Foxbit";
             // 
             // button1
             // 
@@ -111,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 234);
+            this.ClientSize = new System.Drawing.Size(257, 165);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbExchange);
