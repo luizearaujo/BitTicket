@@ -89,7 +89,8 @@ MÁX: {price.high.ToString("N")}
 USD COM: {root.rates.USDCBRL.ToString("N")}
 USD TUR: {root.rates.USDTBRL.ToString("N")}";
 
-            Ultimo = price.last;
+            if (Atualiza)
+                Ultimo = price.last;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -132,7 +133,7 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
             Titulo = $"BitNotify (Cotação {cbExchange.Text})";
 
             Get();
-            
+
             mynotifyicon.BalloonTipTitle = Titulo;
             mynotifyicon.BalloonTipText = Message;
 
