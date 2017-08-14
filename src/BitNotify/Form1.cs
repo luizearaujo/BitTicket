@@ -11,6 +11,7 @@ namespace BitNotify
         private string Message { get; set; }
         private double Ultimo { get; set; }
         private bool Atualiza { get; set; } = true;
+        private ToolTipIcon Icon { get; set; }
 
         public Form1()
         {
@@ -27,10 +28,11 @@ namespace BitNotify
         {
             mynotifyicon.BalloonTipTitle = Titulo;
             mynotifyicon.BalloonTipText = Message;
+            mynotifyicon.BalloonTipIcon = Icon;
 
             if (FormWindowState.Minimized == this.WindowState)
             {
-              
+
                 mynotifyicon.Visible = true;
                 mynotifyicon.ShowBalloonTip(1000);
                 this.Hide();
@@ -48,9 +50,6 @@ namespace BitNotify
             var root = repo.Get();
             var price = new Price();
 
-            if (Ultimo != root.ticker_1h.exchanges.FOX.last)
-                Atualiza = true;
-            
             switch (cbExchange.Text)
             {
                 case "BitValor":
@@ -70,9 +69,16 @@ namespace BitNotify
                     break;
             }
 
-            Titulo = Ultimo > price.last
-                    ? $"BitNotify (Cotação {cbExchange.Text}) - Baixa" : $"BitNotify (Cotação {cbExchange.Text}) - Alta";
+            if (Ultimo != price.last)
+            {
+                Atualiza = true;
 
+                if (Ultimo > price.last)
+                    Icon = ToolTipIcon.Warning;
+                else
+                    Icon = ToolTipIcon.Info;
+            }
+            else Atualiza = false;
 
             Message = $@"ÚLTIMO: {price.last.ToString("N")}
 ANTERIOR: {Ultimo.ToString("N")}
@@ -92,11 +98,12 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
             {
                 mynotifyicon.BalloonTipTitle = Titulo;
                 mynotifyicon.BalloonTipText = Message;
+                mynotifyicon.BalloonTipIcon = Icon;
                 mynotifyicon.Visible = true;
                 mynotifyicon.ShowBalloonTip(1000);
                 Atualiza = false;
             }
-            
+
         }
 
         private void btSair_Click(object sender, EventArgs e)
@@ -113,8 +120,10 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
             config.AppSettings.Settings.Add("Exchange", cbExchange.Text);
             config.Save(ConfigurationSaveMode.Modified);
 
-            Get();
+            Titulo = $"BitNotify (Cotação {cbExchange.Text})";
 
+            Get();
+            
             mynotifyicon.BalloonTipTitle = Titulo;
             mynotifyicon.BalloonTipText = Message;
 
