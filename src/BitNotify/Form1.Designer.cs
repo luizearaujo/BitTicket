@@ -49,7 +49,7 @@
             // 
             this.mynotifyicon.ContextMenuStrip = this.contextMenuStrip1;
             this.mynotifyicon.Icon = ((System.Drawing.Icon)(resources.GetObject("mynotifyicon.Icon")));
-            this.mynotifyicon.Text = "notifyIcon1";
+            this.mynotifyicon.Text = "BitNotify";
             this.mynotifyicon.Visible = true;
             // 
             // timer1
@@ -156,6 +156,8 @@
             this.Controls.Add(this.txTempo);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "BitNotify";
             this.Load += new System.EventHandler(this.Form1_Load);
