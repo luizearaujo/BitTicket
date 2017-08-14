@@ -7,7 +7,7 @@ namespace BitNotify
 {
     public partial class Form1 : Form
     {
-        private string Titulo => "BitNotify (Cotação FoxBit)";
+        private string Titulo { get; set; }
         private string Message { get; set; }
         private double Ultimo { get; set; }
         private bool Atualiza { get; set; } = true;
@@ -50,16 +50,11 @@ namespace BitNotify
         {
             var repo = new Repositorio();
             var root = repo.Get();
-
-            if (Ultimo != root.ticker_1h.exchanges.FOX.last)
-            {
-                Atualiza = true;
-                mynotifyicon.BalloonTipTitle = Ultimo > root.ticker_1h.exchanges.FOX.last
-                    ? $"{Titulo} - Baixa" : $"{Titulo} - Alta";
-            }
-
             var price = new Price();
 
+            if (Ultimo != root.ticker_1h.exchanges.FOX.last)
+                Atualiza = true;
+            
             switch (cbExchange.Text)
             {
                 case "BitValor":
@@ -79,6 +74,10 @@ namespace BitNotify
                     break;
             }
 
+            Titulo = Ultimo > price.last
+                    ? $"BitNotify (Cotação {cbExchange.Text}) - Baixa" : $"BitNotify (Cotação {cbExchange.Text}) - Alta";
+
+
             Message = $@"ÚLTIMO: {price.last.ToString("N")}
 ANTERIOR: {Ultimo.ToString("N")}
 MÍN: {price.low.ToString("N")}
@@ -95,6 +94,7 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
 
             if (Atualiza)
             {
+                mynotifyicon.BalloonTipTitle = Titulo;
                 mynotifyicon.BalloonTipText = Message;
                 mynotifyicon.Visible = true;
                 mynotifyicon.ShowBalloonTip(1000);
