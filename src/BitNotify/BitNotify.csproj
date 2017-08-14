@@ -84,5 +84,11 @@
   <ItemGroup>
     <Content Include="Froyoshark-Enkel-Bitcoin.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BitInformation\BitInformation.csproj">
+      <Project>{146FEE8B-FDCE-49F1-9C60-5BA4BFBB411B}</Project>
+      <Name>BitInformation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

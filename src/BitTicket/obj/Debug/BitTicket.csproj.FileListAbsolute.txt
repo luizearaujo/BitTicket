@@ -32,3 +32,16 @@ C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\obj\Debug\BitTicket.exe
 C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\obj\Debug\BitTicket.pdb
 C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\bin\Debug\BitInformation.dll
 C:\ProjetosGit\luizearaujo\BitTicket\src\BitTicket\bin\Debug\BitInformation.pdb
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\BitTicket.exe.config
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\BitTicket.exe
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\BitTicket.pdb
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\BitInformation.dll
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\Newtonsoft.Json.dll
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\BitInformation.pdb
+C:\projetos\BitTicket\src\BitTicket\bin\Debug\Newtonsoft.Json.xml
+C:\projetos\BitTicket\src\BitTicket\obj\Debug\BitTicket.csprojResolveAssemblyReference.cache
+C:\projetos\BitTicket\src\BitTicket\obj\Debug\BitTicket.Form1.resources
+C:\projetos\BitTicket\src\BitTicket\obj\Debug\BitTicket.Properties.Resources.resources
+C:\projetos\BitTicket\src\BitTicket\obj\Debug\BitTicket.csproj.GenerateResource.Cache
+C:\projetos\BitTicket\src\BitTicket\obj\Debug\BitTicket.exe
+C:\projetos\BitTicket\src\BitTicket\obj\Debug\BitTicket.pdb
