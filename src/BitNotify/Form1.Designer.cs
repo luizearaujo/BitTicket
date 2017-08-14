@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mynotifyicon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.txTempo = new System.Windows.Forms.TextBox();
@@ -38,10 +42,8 @@
             this.cbExchange = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.atualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txMargem = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,70 +53,6 @@
             this.mynotifyicon.Icon = ((System.Drawing.Icon)(resources.GetObject("mynotifyicon.Icon")));
             this.mynotifyicon.Text = "BitNotify";
             this.mynotifyicon.Visible = true;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Atualização";
-            // 
-            // txTempo
-            // 
-            this.txTempo.Location = new System.Drawing.Point(95, 35);
-            this.txTempo.Name = "txTempo";
-            this.txTempo.Size = new System.Drawing.Size(100, 20);
-            this.txTempo.TabIndex = 1;
-            this.txTempo.Text = "60";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Exchange";
-            // 
-            // cbExchange
-            // 
-            this.cbExchange.FormattingEnabled = true;
-            this.cbExchange.Items.AddRange(new object[] {
-            "BitValor",
-            "FoxBit",
-            "MercadoBitcoin",
-            "BitcoinToYou"});
-            this.cbExchange.Location = new System.Drawing.Point(95, 68);
-            this.cbExchange.Name = "cbExchange";
-            this.cbExchange.Size = new System.Drawing.Size(100, 21);
-            this.cbExchange.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(19, 115);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Iniciar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btSair
-            // 
-            this.btSair.Location = new System.Drawing.Point(150, 115);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(75, 23);
-            this.btSair.TabIndex = 5;
-            this.btSair.Text = "Sair";
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // contextMenuStrip1
             // 
@@ -144,18 +82,100 @@
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Atualização";
+            // 
+            // txTempo
+            // 
+            this.txTempo.Location = new System.Drawing.Point(95, 35);
+            this.txTempo.Name = "txTempo";
+            this.txTempo.Size = new System.Drawing.Size(100, 20);
+            this.txTempo.TabIndex = 1;
+            this.txTempo.Text = "60";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(16, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Exchange";
+            // 
+            // cbExchange
+            // 
+            this.cbExchange.FormattingEnabled = true;
+            this.cbExchange.Items.AddRange(new object[] {
+            "BitValor",
+            "FoxBit",
+            "MercadoBitcoin",
+            "BitcoinToYou"});
+            this.cbExchange.Location = new System.Drawing.Point(95, 64);
+            this.cbExchange.Name = "cbExchange";
+            this.cbExchange.Size = new System.Drawing.Size(100, 21);
+            this.cbExchange.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(19, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Iniciar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btSair
+            // 
+            this.btSair.Location = new System.Drawing.Point(150, 125);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(75, 23);
+            this.btSair.TabIndex = 5;
+            this.btSair.Text = "Sair";
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // txMargem
+            // 
+            this.txMargem.Location = new System.Drawing.Point(95, 94);
+            this.txMargem.Name = "txMargem";
+            this.txMargem.Size = new System.Drawing.Size(100, 20);
+            this.txMargem.TabIndex = 7;
+            this.txMargem.Text = "60";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Margem";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(257, 165);
+            this.Controls.Add(this.txMargem);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbExchange);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txTempo);
             this.Controls.Add(this.label1);
-            //this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -182,6 +202,8 @@
         private System.Windows.Forms.ToolStripMenuItem atualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.TextBox txMargem;
+        private System.Windows.Forms.Label label3;
     }
 }
 

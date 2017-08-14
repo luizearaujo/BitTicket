@@ -22,6 +22,7 @@ namespace BitNotify
         {
             txTempo.Text = ConfigurationManager.AppSettings["TempoAtualizacao"];
             cbExchange.Text = ConfigurationManager.AppSettings["Exchange"];
+            txMargem.Text = ConfigurationManager.AppSettings["Margem"];
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -69,7 +70,8 @@ namespace BitNotify
                     break;
             }
 
-            if (Ultimo != price.last)
+            var margem = Convert.ToInt32(txMargem.Text);
+            if ((Ultimo != price.last && (Ultimo - price.last > margem || Ultimo - price.last < margem * -1)))
             {
                 Atualiza = true;
 
@@ -94,7 +96,13 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
         {
             this.Get();
 
-            if (Atualiza)
+            this.Notifica(Atualiza);
+
+        }
+
+        private void Notifica(bool notifica)
+        {
+            if (notifica)
             {
                 mynotifyicon.BalloonTipTitle = Titulo;
                 mynotifyicon.BalloonTipText = Message;
@@ -103,7 +111,6 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
                 mynotifyicon.ShowBalloonTip(1000);
                 Atualiza = false;
             }
-
         }
 
         private void btSair_Click(object sender, EventArgs e)
@@ -116,8 +123,10 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             config.AppSettings.Settings.Remove("TempoAtualizacao");
             config.AppSettings.Settings.Remove("Exchange");
+            config.AppSettings.Settings.Remove("Margem");
             config.AppSettings.Settings.Add("TempoAtualizacao", txTempo.Text);
             config.AppSettings.Settings.Add("Exchange", cbExchange.Text);
+            config.AppSettings.Settings.Add("Margem", txMargem.Text);
             config.Save(ConfigurationSaveMode.Modified);
 
             Titulo = $"BitNotify (Cotação {cbExchange.Text})";
@@ -148,7 +157,9 @@ USD TUR: {root.rates.USDTBRL.ToString("N")}";
 
         private void atualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.timer1_Tick(sender, e);
+            this.Get();
+
+            this.Notifica(true);
         }
     }
 }
